@@ -1,13 +1,3 @@
-# You need to install scikit-learn:
-# sudo pip install scikit-learn
-#
-# Dataset: Polarity dataset v2.0
-# http://www.cs.cornell.edu/people/pabo/movie-review-data/
-#
-# Full discussion:
-# https://marcobonzanini.wordpress.com/2015/01/19/sentiment-analysis-with-python-and-scikit-learn
-
-
 import sys
 import os
 import time

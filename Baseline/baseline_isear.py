@@ -16,8 +16,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.cross_validation import cross_val_score
 from sklearn.cross_validation import StratifiedShuffleSplit
 
-# TRAIN_SET_PATH = "20ng-no-stop.txt"
-# TRAIN_SET_PATH = "r52-all-terms.txt"
+
 TRAIN_SET_PATH = "isear.txt"
 
 GLOVE_6B_50D_PATH = "glove.6b\glove.6B.300d.txt"
@@ -29,47 +28,16 @@ X, y = [], []
 with open(TRAIN_SET_PATH, "rb") as infile:
     for line in infile:
         label, text = line.split("\t")
-##        if i < 10:
-##            print label,'---', text
-##            i = i + 1
-        # texts are already tokenized, just split on space
-        # in a real case we would use e.g. spaCy for tokenization
-        # and maybe remove stopwords etc.
         X.append(text.split())
         y.append(label)
-##list = []
-##Data = pd.read_csv('iseardataset.txt',header=None)
-##for i in range (len(Data[0])):
-####    if i < 10:
-####        print Data[2][i]+' '+Data[0][i]
-##    line = Data[0][i]+'|'+Data[1][i]
-##    list.append(line)
-##random.shuffle(list)
-##c = 0
-##for i in range(int(len(list)*0.7)):
-##    
-##    index = list[i].index('|')
-##    if c < 10:
-##        print list[i][index+1:],'---',list[:index]
-##        c = c+ 1
-##    X.append(list[i][index+1:].split())
-##    y.append(list[i][:index])
 
 X, y = np.array(X), np.array(y)
-##print y[:10]
-##print X[:10]
 print "total examples %s" % len(y)
 
 import numpy as np
 with open(GLOVE_6B_50D_PATH, "rb") as lines:
     word2vec = {line.split()[0]: np.array(map(float, line.split()[1:]))
                for line in lines}
-
-# reading glove files, this may take a while
-# we're reading line by line and only saving vectors
-# that correspond to words from our training set
-# if you wan't to play around with the vectors and have 
-# enough RAM - remove the 'if' line and load everything
 
 glove_small = {}
 all_words = set(w for words in X for w in words)
@@ -227,17 +195,4 @@ for name, model in all_models:
     print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
     print ''
     print ''
-df = pd.DataFrame(table)
 
-
-##
-##plt.figure(figsize=(15, 6))
-##fig = sns.pointplot(x='train_size', y='accuracy', hue='model', 
-##                    data=df[df.model.map(lambda x: x in ["mult_nb", "svc_tfidf", "w2v_tfidf", 
-##                                                         "glove_small_tfidf", "glove_big_tfidf", 
-##                                                        ])])
-##sns.set_context("notebook", font_scale=1.5)
-##fig.set(ylabel="accuracy")
-##fig.set(xlabel="labeled training examples")
-##fig.set(title="R8 benchmark")
-##fig.set(ylabel="accuracy")
