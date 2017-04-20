@@ -117,7 +117,7 @@ if __name__ == "__main__":
     embeddings = gloveVec('glove.840B.300d.txt')
     vocab, data = createVocabAndData(sentences)
     embedding_mat = createEmbeddingMatrix(vocab,embeddings)
-    #pickle.dump([data, labels, embedding_mat], open('../data/embed_mat.pkl', 'wb'))
+    pickle.dump([data, labels, embedding_mat], open('embedding_matrix.pkl', 'wb'))
     print ("Data created")
 
     print("Train Test split")
