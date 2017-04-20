@@ -1,0 +1,6 @@
+model_checkpoint_path: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-8600"
+all_model_checkpoint_paths: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-6600"
+all_model_checkpoint_paths: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-7400"
+all_model_checkpoint_paths: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-7800"
+all_model_checkpoint_paths: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-8400"
+all_model_checkpoint_paths: "/Users/piyushghai/Documents/git-repos/multi-class-text-classification-cnn/trained_model_1492182160/checkpoints/model-8600"
