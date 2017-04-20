@@ -4,7 +4,7 @@
  - [Navnith](https://github.com/navnith)
  - [Pragya](https://github.com/pragyaarora)
  - [Piyush](https://github.com/piyushghai)
- - [Yours Truly](https://github.com/Harsh24893)
+ - [Harsh Gupta](https://github.com/Harsh24893)
 
 ### Highlights:
 
