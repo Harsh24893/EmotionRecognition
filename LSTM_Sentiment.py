@@ -1,7 +1,3 @@
-__author__ = 'Hao'
-
-__author__ = 'Hao'
-
 from keras.datasets import imdb
 import numpy as np
 import re
