@@ -370,7 +370,7 @@ Email: \IEEEauthorrefmark{1}arora.170@osu.edu,
 
 \begin{abstract}
 %\boldmath
-Human computer interaction and its applications such as chat bots and voice assistants  will be more natural if computers are able to perceive and respond to human non-verbal communication such as emotions. Although a lot of work has been done in the field of sentiment analysis but relatively little work has been done to detect emotions such as joy, anger, surprise in a text. This paper tries to extra the embedding based on words from a text document and apply state of the art neural network techniques to predict what emotion the writer wants to convey from the text. We experimented on two approaches along with a baseline approach to extract emotion decision using word embeddings. We used ISEAR dataset to label seven emotions. The emotion classes are sadness, anger, joy, shame, disgust, guilt and fear. The results reveals that the system based on Long Short Term Memory (LSTM) gave better performance than the system based on Convolution Neural Networks (CNN) for the emotions considered. Results also show when our feature engineered vectors and Word2Vec were jointly learned, the performance and the robustness of the emotion recognition system improve measurably. 
+Human computer interaction and its applications such as chat bots and voice assistants  will be more natural if computers are able to perceive and respond to human non-verbal communication such as emotions. Although a lot of work has been done in the field of sentiment analysis but relatively little work has been done to detect emotions such as joy, anger, surprise in a text. This paper tries to extract the embedding based on words from a text document and apply state of the art neural network techniques to predict what emotion the writer wants to convey from the text. We experimented on two approaches along with a baseline approach to extract emotion decision using word embeddings. We used ISEAR dataset to label seven emotions. The emotion classes are sadness, anger, joy, shame, disgust, guilt and fear. The results reveals that the system based on Long Short Term Memory (LSTM) gave better performance than the system based on Convolution Neural Networks (CNN) for the emotions considered. Results also show when our feature engineered vectors and Word2Vec were jointly learned, the performance and the robustness of the emotion recognition system improve measurably. 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -415,7 +415,7 @@ Computational linguists define linguistic structure based on a set of rules.
 
 
 \subsection{Machine Learning Approaches}\label{sec:formatting-text}
-Machine learning techniques which can be broadly classified as supervised and unsupervised machine learning has been deployed to overcome the short falls of rule based methods which do not take into account the all the possibly corner cases and is short at capturing the evolution of writing texts by human.
+Machine learning techniques which can be broadly classified as supervised and unsupervised machine learning has been deployed to overcome the short falls of rule based methods which do not take into account all the possibly corner cases and is short at capturing the evolution of writing texts by human.
 
 \subsubsection{Supervised machine learning with affect lexicons}\label{sec:cap-num}
 Under this approach a database is created for the affect words where each affect word is divided into smaller classes to make it a find grained resource and now this resource is used for multi class classification of emotions. Models like Support Vector Machine is used under this technique. For supervised learning the problem is that we need a lot of data to train the classifier and then the trained model works on a domain specific data set, which is its disadvantage.
@@ -431,21 +431,19 @@ An evaluation of two unsupervised techniques using WordNet-Affect exploited a ve
 
 
 \section{Proposed Approach}\label{sec:fig-tables}
-In our approach we have modeled our framework to run on state of the art machine learning algorithms and learn the context of the data using their vectors from Word2Vec \cite{word2vec} \& GloveVec \cite{glove}. After the model is trained on sever hyper parameters we tested our model on unseen data set and calculated the accuracy which is better than baseline given in related papers. Our emotion recognition algorithm includes three main components: preprocessing, semantic transformation of Word embedding and application of Machine Learning algorithm. 
+In our approach we have modeled our framework to run on state of the art machine learning algorithms and learn the context of the data using their vectors from Word2Vec \cite{word2vec} \& GloveVec \cite{glove}. After the model is trained on several hyper parameters we tested our model on unseen data set and calculated the accuracy which is better than baseline given in related papers. Our emotion recognition algorithm includes three main components: preprocessing, semantic transformation of Word embedding and application of Machine Learning algorithm. 
 
-\subsection{Preprocessing}\label{sec:cap-num}
-We used ISEAR data set to test our model. This dataset has sentences tagged with an emotion label. The preprocessing task consists of word level parsing along with tokenization and stemming which cleans the text document of unwanted stop words which don't relate to emotion. This enables us to extract the relevant affect-bearing words and the syntactic dependencies between words. The next step is to perform word-level analysis by computing a word embedding for the affect-bearing words by using the glove embedding and also alternaltely learning the word embedding for this model by itself. 
+\subsection{Preprocessing \& Word Embedding}\label{sec:cap-num}
+We used ISEAR data set to test our model. This dataset has sentences tagged with an emotion label. The preprocessing task consists of word level parsing along with tokenization and stemming which cleans the text document of unwanted stop words which don't relate to emotion. This enables us to extract the relevant affect-bearing words and the syntactic dependencies between words. The next step is to perform word-level analysis by computing a word embedding for the affect-bearing words by using the glove vector and also alternately learning the word embedding for this model by itself. \\
 
-
-\subsection{Using the word embedding}\label{sec:positioning}
 The transcript of the text documents were extracted, converted to all lower case characters. We did not remove punctuations here, because our intuition was that these punctuation marks can have a bearing on the emotion classification of a sentence. We then preprocessed the sentences using NLTK Tokenizer to give a list of tokens. This list of tokens was converted into a word embedding using Word2Vec model for (CNN) and Glove model (LSTM). For each word a 300 dimensional embedding was created. This could have been tweaked, however for simplicity, we stuck with a 300 dimensional vector. \cite{lstm2}
 
 
 \subsection{Application of Machine Learning Techniques}\label{sec:colour-illustrations}
 After the word embeddings are prepared, the word vectors are given as an input to our neural network models. The model is then trained on several hyper parameters like the number of epochs, number of layers, drop out probability, activation function, loss function, optimizer and learning rate.
 
-\subsection {Long Short Term Memory(LSTM)\cite{lstm}}
-We have mapped each sentence into a real vector domain called word embedding. This is a technique where words are encoded as real-valued vectors in a high dimensional space, where the similarity between words in terms of meaning translates to closeness in the vector space.
+\subsubsection {Long Short Term Memory(LSTM)\cite{lstm}}
+We have mapped each sentence into a real vector domain called GloVe embedding. This is a technique where words are encoded as real-valued vectors in a high dimensional space, where the similarity between words in terms of meaning translates to closeness in the vector space.
 We have mapped each word into 300 length vector and there are around 9000 unique words so a matrix of 9000x300 is created. This positive integer representation of words is fed into Embedding layer which converts it into word embedding.
 The first layer is the Embedded layer that uses 300 length vectors to represent each word. The next layer is the LSTM layer with 128 memory units and 0.6 dropout to input and recurrent connections of the memory units with LSTM. Finally, because this is a classification problem we use a Dense output layer with seven neurons, a softmax activation function with categorical crossentropy and ADAM optimizer. A large batch size of 128 reviews is used to space out weight updates.  We observed that applying dropout as a parameter to the LSTM Model led to an increase in the accuracy.
 \begin{figure}
@@ -455,10 +453,10 @@ The first layer is the Embedded layer that uses 300 length vectors to represent 
     \label{lstm}
 \end{figure}
 
-In Figure \ref{lstm} xt's are are word embedding which is 300 dimensional vector and y's are the output from the output layer. In our LSTM model we gave three hidden layers which included embedding layer, lstm layer, dense layer and the final output layer. The output is passed through a softmax function which gives us a 7 dimensional vector as the output. 
+In Figure \ref{lstm} xt's are word embedding which is 300 dimensional vector and y's are the output from the output layer. In our LSTM model we have three hidden layers which included embedding layer, lstm layer, dense output layer. The output is passed through a softmax function which gives us a 7 dimensional vector as the output. 
 
 
-\subsection{Convolutional Neural Networks}
+\subsubsection{Convolutional Neural Networks}
 For implementing CNN, we implemented a model similar to Kim Yoon's Convolutional Neural Networks for Sentence Classification \cite{kimyoon} \cite{wildmlcnn}.
 The CNN architecture used by us for the emotion analysis task is given in Figure \ref{fig_cnn}. The network used by us works roughly as follows : 
 \begin{itemize}
@@ -482,7 +480,7 @@ All our models presented below were evaluated on a 70-30 train-test split and 90
 The dumb baseline model, predicts the emotions at random for a text from the given 7 emotion labels. This approach, not too surprisingly performs poorly.
 
 \subsection{Multinomial Na{\"i}ve Bayes}
-We used TFIDF Vectorizer for Multinomial Na{\"i} Bayes which gives us an accuracy of 0.567 on the test dataset. We also used Multinomial Na{\"i}ve Bayes with a Bag of Words approach. This performed slighlty lower than the TFIDF Vectorizer and we got an accuracy of 0.562. The results are summarized in Table \ref{tab_nb}. 
+We used TFIDF Vectorizer for Multinomial Na{\"i}ve Bayes which gives us an accuracy of 0.567 on the test dataset. We also used Multinomial Na{\"i}ve Bayes with a Bag of Words approach. This performed slightly lower than the TFIDF Vectorizer and we got an accuracy of 0.562. The results are summarized in Table \ref{tab_nb}. 
 
 \subsection{Extra Tree Classifier}
 We also used Extra tree classifier (Random Forest Classification). With this classifier we changed the word representations using Word2Vec and GloveVectors representation. After changing the word representations, TFIDF Vectorizer was used. The results were not very encouraging with this though. We achieved a maximum accuracy of 0.4313 with Glove representation of the input text. The results are summarized in Table \ref{tab_nb}.
@@ -512,7 +510,7 @@ We next implemented a multi-class, one versus all classifier. The input to the S
 \end{table}
 
 \subsection{CNN}
-For Convolutional Neural Networks, we did not use deep networks, but a shallow network and experimented with other hyperparameter tuning as well as experimenting with the word embeddings. We fixed the sequence length to 75 words. For shorter words, we padded the matrix with all zeros. 75 words as per our intuition is long enough text to judge the emotion of a sentence. The vocab size was 9000. We also varied the filter sizes, which were convolved over the words. The filter sizes were taken as \textit{3,4,5}. The number of filters were taken as 32.  In the embedding layer, we used Word2Vec representation of our dataset and we also experimented by taking random initializing of the word vectors and trained the model to learn the representations on the given inputs. For the output layer, we used softmax as the activation function. The activation used in the intermediate layers was \textit{Relu} Activation.
+For Convolutional Neural Networks, we did not use deep networks, but a shallow network and experimented with other hyperparameter tuning as well as experimenting with the word embeddings. We fixed the sequence length to 75 words. For shorter words, we padded the matrix with all zeros. 75 words as per our intuition was long enough text to judge the emotion of a sentence. The vocab size was 9000. We also varied the filter sizes, which were convolved over the words. The filter sizes were taken as \textit{3,4,5}. The number of filters were taken as 32.  In the embedding layer, we used Word2Vec representation of our dataset and we also experimented by taking random initializing of the word vectors and trained the model to learn the representations on the given inputs. For the output layer, we used softmax as the activation function. The activation used in the intermediate layers was \textit{Relu} Activation.
 
 For hyperparameter tuning and generating accuracy, we split the training dataset into training and testing dataset present the accuracy on both dataset. The following parameters were experimented with : (The best values are indicated alongside)
 \begin{itemize}
@@ -577,16 +575,16 @@ For LSTM, we used GloveVector as word embeddings. The arhictecture for the model
 	e=30,b = 100, d=0.6, ac=softmax  & 0.5971 & 0.8952\\
 	e=30,b = 256, d=0.6, ac=softmax  & 0.5984 & 0.8765\\
 	e=30, LSTMDropout : 0.5, recurrent dropout:0.5    & 0.637 & 0.7437\\
-	e=40, LSTMDropout : 0.6, recurrent dropout:0.6   & 0.6449 & 0.7288 \\
+	e=40, LSTMDropout : 0.6, recurrent dropout:0.6   & 0.6463 & 0.7288 \\
     \noalign{\smallskip}\hline
   \end{tabular} 
 \end{table}
 
 \section{Conclusion}
-This paper addresses an important and less examined area of sentiment research on emotions, that is, emotion detection from text. The major contribution of this project is to highlight the application of neural networks to learn semantics from a data in order to identify and distinguish various types of emotions in text. We presented Long-Short Term Memory (LSTM) model which is essentially a specific kind of Recurrent Neural Networks (RNNs) and Convolutional neural network (CNN) to detect emotions from text. Experimental results show that our models perform better than other existing Machine learning approaches. Among our approaches, LSTM outperformed CNN and achieved an accuracy of 64.49\%. We tried to experiment by adding more convolutional layers to the CNN Model, but that did not boost the test accuracy a lot, instead the trend of overfitting was observed.
+This paper addresses an important and less examined area of sentiment research on emotions, that is, emotion detection from text. The major contribution of this project is to highlight the application of neural networks to learn semantics from a data in order to identify and distinguish various types of emotions in text. We presented Long-Short Term Memory (LSTM) model which is essentially a specific kind of Recurrent Neural Networks (RNNs) and Convolutional neural network (CNN) to detect emotions from text. Experimental results show that our models perform better than other existing Machine learning approaches. Among our approaches, LSTM outperformed CNN and achieved an accuracy of 64.63\%. We tried to experiment by adding more convolutional layers to the CNN Model, but that did not boost the test accuracy a lot, instead the trend of overfitting was observed.
 
 \section{Future Works}
-Emotion detection has been studied . Although not enough time has passed to have established standards in the field, there is some consistency between the approaches, and the algorithms are continuing to increase in accuracy by using more of machine learning approach in this domain.As out future work we would like to work on better text filtering techniques to understand the underlying semantic in documents. We would like to efficiently handle negation phrases in texts like The movie was surprisingly horrible, He is horribly good. The former example is a classic example of a negative emotion, where as the later example is a use of a misnomer. Learning with these bigram and other n-gram variations will help us increase the overall accuracy of the framework. We will also like to make our word embedding more robust by using a special kind of tagging approach called NAVA (Noun Adjective Verb Adverb). NAVA approach has been in use for emotion detection tasks to extract emotion bearing phrases, because some words express affect less apparent then others. Some words express affect more apparently than others. Lets consider the sentence, \textit{Sheldon got lots of new toys for his birthday}. Here, the words \textbf{‘new’}, \textbf{‘toys’} and \textbf{‘birthday’} together convey happiness although it may not seem so when these words are looked at individually. We will also like to use paragraph vector embedding instead of Word embedding for this task. 
+Emotion detection has been studied. Although not enough time has passed to have established standards in the field, there is some consistency between the approaches, and the algorithms are continuing to increase in accuracy by using more of machine learning approach in this domain. As our future work we would like to work on better text filtering techniques to understand the underlying semantic in documents. We would like to efficiently handle negation phrases in texts like : \textit{The movie was surprisingly horrible}, \textit{He is horribly good}. The former example is a classic example of a negative emotion, whereas the latter is a use of a misnomer. Learning with these bigram and other n-gram variations will help us increase the overall accuracy of the framework. We would also like to make our word embedding more robust by using a special kind of tagging approach called NAVA (Noun Adjective Verb Adverb). NAVA approach has been in use for emotion detection tasks to extract emotion bearing phrases, because some words express affect less apparent then others. Some words express affect more apparently than others. Lets consider the sentence, \textit{Sheldon got lots of new toys for his birthday}. Here, the words \textbf{‘new’}, \textbf{‘toys’} and \textbf{‘birthday’} together convey happiness although it may not seem so when these words are looked at individually. We will also like to use paragraph vector embedding instead of Word embedding for this task. 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
 % or
@@ -633,7 +631,7 @@ Emotion detection has been studied . Although not enough time has passed to have
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 \bibitem{iseardataset}
-The ISEAR Dataset is available from : 
+The ISEAR Dataset is available from : http://emotion-research.net/toolbox/toolboxdatabase.2006-10-13.2581092615
 
 \bibitem{sentiword}
 SentiWordNet is a lexical resource for opinion mining. More about it can be found at : http://sentiwordnet.isti.cnr.it/

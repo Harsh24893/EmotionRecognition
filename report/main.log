@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 APR 2017 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 APR 2017 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -284,9 +284,6 @@ LaTeX Warning: Label `sec:positioning' multiply defined.
 LaTeX Warning: Label `sec:cap-num' multiply defined.
 
 
-LaTeX Warning: Label `sec:positioning' multiply defined.
-
-
 LaTeX Warning: Label `tab_cnn' multiply defined.
 
 )
@@ -372,26 +369,36 @@ LaTeX Font Info:    Calculating math sizes for size <11> on input line 368.
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
 <LSTM_image.png, id=12, 409.53pt x 450.18187pt>
 File: LSTM_image.png Graphic file (type png)
  <use LSTM_image.png>
-Package pdftex.def Info: LSTM_image.png used on input line 453.
+Package pdftex.def Info: LSTM_image.png used on input line 451.
 (pdftex.def)             Requested size: 253.04987pt x 278.17566pt.
- [2 <./LSTM_image.png>] <cnn_arch.png, id=18, 967.615pt x 390.45876pt>
+ [2 <./LSTM_image.png>]
+Underfull \hbox (badness 2293) in paragraph at lines 460--463
+ []\OT1/ptm/m/it/10 Convolutional Neu-ral Net-works: [][] \OT1/ptm/m/n/10 For i
+m-ple-ment-ing
+ []
+
+<cnn_arch.png, id=18, 967.615pt x 390.45876pt>
 File: cnn_arch.png Graphic file (type png)
  <use cnn_arch.png>
-Package pdftex.def Info: cnn_arch.png used on input line 473.
+Package pdftex.def Info: cnn_arch.png used on input line 471.
 (pdftex.def)             Requested size: 253.04987pt x 102.11267pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 519.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 517.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 519.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 517.
  [3 <./cnn_arch.png>]
-Overfull \hbox (16.93768pt too wide) in paragraph at lines 571--583
+Overfull \hbox (16.93768pt too wide) in paragraph at lines 569--581
  [][] 
  []
 
@@ -413,29 +420,35 @@ Missing character: There is no ˜ in font ptmb7t!
 Missing character: There is no â in font ptmb7t!
 Missing character: There is no € in font ptmb7t!
 Missing character: There is no ™ in font ptmb7t!
-[4]
-Underfull \hbox (badness 5091) in paragraph at lines 652--653
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+[]\OT1/ptm/m/n/8 The ISEAR Dataset is avail-able from : http://emotion-
+ []
+
+
+Underfull \hbox (badness 5091) in paragraph at lines 650--651
 []\OT1/ptm/m/n/8 The fol-low-ing is a good link about un-der-stand-ing LSTMs :
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 655--657
+Underfull \hbox (badness 2809) in paragraph at lines 653--655
 []\OT1/ptm/m/n/8 A Keras im-ple-men-ta-tion of us-ing pre-trained word em-bed-d
 ings.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--657
+Underfull \hbox (badness 10000) in paragraph at lines 653--655
 \OT1/ptm/m/n/8 https://blog.keras.io/using-pre-trained-word-embeddings-in-a-ker
 as-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 661--662
+Underfull \hbox (badness 1478) in paragraph at lines 659--660
 []\OT1/ptm/m/n/8 An im-ple-men-ta-tion for CNNs for Sen-tence Clas-si-fi-ca-tio
 n can be
  []
 
+[4]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -457,11 +470,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4543 strings out of 493014
  70913 string characters out of 6133351
- 150236 words of memory out of 5000000
+ 151236 words of memory out of 5000000
  8031 multiletter control sequences out of 15000+600000
  40020 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,39p,1506b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,39p,1519b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
@@ -469,7 +482,7 @@ ive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/t
 exmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 232862 bytes).
+Output written on main.pdf (5 pages, 233716 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
