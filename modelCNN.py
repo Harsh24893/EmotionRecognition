@@ -108,12 +108,6 @@ class modelCNN:
         return roc_auc_score(y_test, y_pred)
 
     def predict_text(self, X_text, vocab):
-        """
-        Get a list of texts and make predictions directly
-        :param X_text:
-        :param vocab:
-        :return:
-        """
         x = [transform_text(i, vocab) for i in X_text]
         return self.predict_prob(x)
 
@@ -127,7 +121,6 @@ if __name__ == "__main__":
     print("Training")
     clf = modelCNN(embedding_mat=embedding_mat)
     clf.fit(X_train, y_train, X_test, y_test, nb_epoch=10)
-    # clf.load_model(fname='../data/cnn_diff_filter.h5')
 
     print("Dumping the model")
     clf.save_weights(fname='../data/cnn_diff_filter.h5')
